@@ -28,7 +28,8 @@ public class FileReader implements Reader {
             
                 // Do this if locating data file outside of project (preferred)
                 // File is located at the root of the root drive (likely "E" in class)
-		File data = new File(File.separator + "data.txt");
+		// relative paths are awesome.
+		File data = new File("data.txt");
 
 		BufferedReader in = null;
 		String line = null;
