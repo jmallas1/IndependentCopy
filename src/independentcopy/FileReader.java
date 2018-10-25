@@ -10,8 +10,8 @@ import java.io.*;
  * 
  * @author  Jim Lombardo, WCTC Lead Java Instructor
  * @version 1.02
- * @see     Driver for run instructions and info about design rules
- * @see     DependentCopy project for a poor design
+ * @seek     Driver for run instructions and info about design rules
+ * @seek     DependentCopy project for a poor design
  */
 public class FileReader implements Reader {
 	private boolean lineReadFlag = false;
