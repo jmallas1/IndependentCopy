@@ -1,6 +1,8 @@
 
 package independentcopy;
 
+import java.util.ArrayList;
+
 /**
  * This example demonstrates a good design -- one that has NO
  * dependency issues. It is not RIGID (Copier can be used with 
@@ -50,6 +52,13 @@ package independentcopy;
 public class Driver {
 
 	public static void main(String[] args) {
+
+		ArrayList<String> someList = new ArrayList<String>();
+		someList.add("Jared was here");
+		someList.add("So was Sean");
+		someList.add("And Jordan");
+		someList.add("Not to mention Tony...");
+		someList.add("Killroy was here");
 		// Uncomment this out (and comment following reader/writer)
 		// to see how switching objects causes no problems with
 		// Copier class because it's Polymorphic!!!
@@ -67,7 +76,19 @@ public class Driver {
 		// (it is not rigid, fragile or immobile)
 		Copier copier = new Copier( reader, writer );
 		copier.copy();
-		
+
+		reader = new ListReader(someList);
+		writer = new GuiWriter();
+
+		copier = new Copier(reader, writer);
+		copier.copy();
+
+		reader = new KeyboardReader();
+		writer = new ListWriter(someList);
+
+		copier = new Copier(reader, writer);
+		copier.copy();
+
 		// Send end of program message
 		System.out.println("Program ended. Line of reader input copied successfully to writer output.");
 	}

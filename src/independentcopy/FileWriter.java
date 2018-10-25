@@ -18,12 +18,12 @@ public class FileWriter implements Writer {
 	/**
 	 * Write a line of input to a file "c:\temp\datacopy.txt"
 	 * 
-	 * @see Writer#writeln()
+	 * @seek Writer#writeln()
 	 */
 	public void writeln(String line) {
 		boolean append = false;
-		File data = new File(File.separatorChar + "Temp" + 
-			  File.separatorChar + "datacopy.txt");
+		// relative paths are cool
+		File data = new File("datacopy.txt");
 		PrintWriter out = null;
 			  
 		// This is where we setup our streams (append = false means overwrite)
