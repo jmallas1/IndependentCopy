@@ -6,13 +6,9 @@ public class ListWriter implements Writer
 {
     ArrayList<String> someList;
 
-    public ListWriter()
+    public ListWriter(ArrayList<String> someList)
     {
-        someList = new ArrayList<String>();
-        someList.add("Jared was here");
-        someList.add("So was Sean");
-        someList.add("And Jordan");
-        someList.add("Not to mention Tony...");
+        this.someList = someList;
     }
 
     @Override

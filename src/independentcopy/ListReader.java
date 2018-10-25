@@ -4,16 +4,15 @@ import java.util.ArrayList;
 
 public class ListReader implements Reader
 {
-    ArrayList<String> someArrayList;
+    ArrayList<String> someList;
 
-    public ListReader() {
+    public ListReader(ArrayList<String> someList) {
 
-        this.someArrayList = new ArrayList<String>();
-        someArrayList.add("Killroy was here");
+        this.someList = someList;
     }
 
     @Override
     public String readln() {
-        return someArrayList.get(0);
+        return someList.get(someList.size() - 1);
     }
 }
